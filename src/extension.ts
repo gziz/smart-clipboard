@@ -78,7 +78,7 @@ const createClipboardText = (
     : `vscode://file/${filePath}:${startLine}`;
 
   if (includeCode) {
-    return `[Open code](${baseLink})\n\`\`\`${languageId}\n${text}\n\`\`\``;
+    return `[Go](${baseLink})\n\`\`\`${languageId}\n${text}\n\`\`\``;
   } else {
     return baseLink;
   }
