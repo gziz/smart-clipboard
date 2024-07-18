@@ -3,8 +3,9 @@
   "displayName": "Smart Clipboard",
   "repository": "https://github.com/gziz/smart-clipboard",
   "publisher": "gziz",
-  "description": "",
+  "description": "Copy the file path and selected code to the clipboard as markdown. This is useful for note-taking apps such as Notion or Obsidian.",
   "version": "0.0.1",
+  "icon": "resources/smart-clipboard.png",
   "engines": {
     "vscode": "^1.85.0"
   },

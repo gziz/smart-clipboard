@@ -34,12 +34,14 @@ const generateLink = (includeCode: boolean) => {
   const httpsRedirect = config.get<boolean>("redirect") || false;
 
   const filePath = editor.document.fileName;
+  const languageId = editor.document.languageId;
   const clipboardText = createClipboardText(
     filePath,
     startLine,
     text,
     httpsRedirect,
-    includeCode
+    includeCode,
+    languageId
   );
 
   vscode.env.clipboard.writeText(clipboardText).then(() => {
@@ -52,7 +54,6 @@ const generateLink = (includeCode: boolean) => {
 const removeCommonIndentation = (text: string): string => {
   const lines = text.split("\n");
 
-  // Find the minimum indentation of all non-empty lines
   const minIndent = lines.reduce((min, line) => {
     if (line.trim() === "") {
       return min;
@@ -61,23 +62,23 @@ const removeCommonIndentation = (text: string): string => {
     return indent < min ? indent : min;
   }, Infinity);
 
-  // Remove the common leading indentation
   return lines.map((line) => line.slice(minIndent)).join("\n");
 };
 
 const createClipboardText = (
-  filePath: string, 
-  startLine: number, 
+  filePath: string,
+  startLine: number,
   text: string,
   httpsRedirect: boolean,
-  includeCode: boolean
+  includeCode: boolean,
+  languageId: string
 ): string => {
   const baseLink = httpsRedirect
-    ? `https://linkng.me/vscode:/file/${filePath}:${startLine+1}` // IDE's lines are 1-indexed
+    ? `https://linkng.me/vscode:/file/${filePath}:${startLine}`
     : `vscode://file/${filePath}:${startLine}`;
 
   if (includeCode) {
-    return `[Open code](${baseLink})\n\`\`\`\n${text}\n\`\`\``;
+    return `[Open code](${baseLink})\n\`\`\`${languageId}\n${text}\n\`\`\``;
   } else {
     return baseLink;
   }

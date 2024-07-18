@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Smart Clipboard extension for Visual Studio Code provides commands to copy the file path and selected code to the clipboard. It offers two functionalities:
+The Smart Clipboard extension for Visual Studio Code provides commands to copy the file path and selected code to the clipboard as markdown. This is useful for note-taking apps such as Notion or Obsidian.. It offers two functionalities:
 1. Copying the file path and the selected code as a link to open the code in VSCode.
 2. Copying only the file path as a link to open the code in VSCode.
 
