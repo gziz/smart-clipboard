@@ -6,6 +6,12 @@ The Smart Clipboard extension for Visual Studio Code provides commands to copy t
 1. Copying the file path and the selected code as a link to open the code in VSCode.
 2. Copying only the file path as a link to open the code in VSCode.
 
+### Creating a Link
+<img src="https://rand-stuff.s3.amazonaws.com/creating-note.gif" text-align="center" width="1000" alt="Creating Link">
+
+### Opening a Link
+<img src="https://rand-stuff.s3.amazonaws.com/opening-note.gif" text-align="center" width="1000" alt="Opening Link">
+
 ## Commands
 
 - **Get Smart Code**: Copies the file path and selected code to the clipboard with a formatted link.

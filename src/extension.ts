@@ -37,7 +37,7 @@ const generateLink = (includeCode: boolean) => {
   const languageId = editor.document.languageId;
   const clipboardText = createClipboardText(
     filePath,
-    startLine,
+    startLine+1, // IDE's lines are 1-indexed
     text,
     httpsRedirect,
     includeCode,
